@@ -84,6 +84,10 @@ function initKrobs() {
         b.preventDefault();
         a.swipeTo(6);
     });
+    $(".go-book").click(function(b) {
+        b.preventDefault();
+        a.swipeTo(7);
+    });
     $(".arrow-left").on("click", function(b) {
         b.preventDefault();
         a.swipePrev();
@@ -682,8 +686,37 @@ function initialize() {
         zIndex: 3
     });
 }
+
+function getTodayDate(){
+    var dat = new Date();
+    var month = new String(dat.getMonth());
+    var day = new String(dat.getDay());
+    if(month.length < 2){
+        month = "0" + (dat.getMonth() + 1);
+    }else{
+        month = dat.getMonth() + 1;
+    }
+    if(day.length == 1){
+        day = "0" + (dat.getDay() + 1);
+    }else{
+        day = dat.getDay() + 1;
+    }
+    return dat.getFullYear() + "-" + month + "-" + day;
+}
+
+
+
+var setMinValueForDateFields = function(){
+    var fields = document.querySelectorAll('input[type="date"]');
+
+    for(var field of fields){
+        field.setAttribute('min', getTodayDate());
+    }
+
+}
 // init   ----------------------------------------
 $(document).ready(function() {
     initKrobs();
     initajaxjs();
+    setMinValueForDateFields();
 });
