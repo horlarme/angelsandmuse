@@ -720,3 +720,26 @@ $(document).ready(function() {
     initajaxjs();
     setMinValueForDateFields();
 });
+
+function showSpaces(e){
+    var selected;
+
+    if(isNaN(e)) selected = parseInt(e.selectedIndex);
+    else{
+        document.querySelector('select[name=type]').selectedIndex = e;
+        selected = e;
+    }
+
+    changeForm(selected);
+}
+
+var forms = document.querySelectorAll('select[name=price]');
+
+function changeForm(index){
+    for(var i = 0; i <= (forms.length - 1);i++){
+        forms[i].style.display = 'none';
+        if(i == index){
+            forms[index].style.display = 'block';
+        }
+    }
+}

@@ -464,6 +464,7 @@
                                                             <hr/>
                                                             <h3>&#x20A6; 35,000</h3>
                                                             <a href="#"
+                                                               onclick="showSpaces(0)"
                                                                class="go-book button float-button content-button transition hide-icon">
                                                                 <i class="fa fa-angle-right transition2"></i>
                                                                 <span class="text transition color-bg">Book Now</span>
@@ -475,6 +476,7 @@
                                                             <hr/>
                                                             <h3>&#x20A6; 40,000</h3>
                                                             <a href="#"
+                                                               onclick="showSpaces(0)"
                                                                class="go-book button float-button content-button transition hide-icon">
                                                                 <i class="fa fa-angle-right transition2"></i>
                                                                 <span class="text transition color-bg">Book Now</span>
@@ -584,6 +586,7 @@
                                                             <hr/>
                                                             <h3>&#x20A6; 5,000</h3>
                                                             <a href="#"
+                                                               onclick="showSpaces(1)"
                                                                class="go-book button float-button content-button transition hide-icon">
                                                                 <i class="fa fa-angle-right transition2"></i>
                                                                 <span class="text transition color-bg">Book Now</span>
@@ -594,6 +597,7 @@
                                                             <hr/>
                                                             <h3>&#x20A6; 68,5000</h3>
                                                             <a href="#"
+                                                               onclick="showSpaces(1)"
                                                                class="go-book button float-button content-button transition hide-icon">
                                                                 <i class="fa fa-angle-right transition2"></i>
                                                                 <span class="text transition color-bg">Book Now</span>
@@ -604,6 +608,7 @@
                                                             <hr/>
                                                             <h3>&#x20A6; 800,000</h3>
                                                             <a href="#"
+                                                               onclick="showSpaces(1)"
                                                                class="go-book button float-button content-button transition hide-icon">
                                                                 <i class="fa fa-angle-right transition2"></i>
                                                                 <span class="text transition color-bg">Book Now</span>
@@ -715,7 +720,8 @@
                                                             <hr/>
                                                             <h3>&#x20A6; 20,000</h3>
                                                             <a href="#"
-                                                               class="go-book button float-button content-button transition hide-icon">
+                                                               class="go-book button float-button content-button transition hide-icon"
+                                                            onclick="showSpaces(2)">
                                                                 <i class="fa fa-angle-right transition2"></i>
                                                                 <span class="text transition color-bg">Book Now</span>
                                                             </a><br/>
@@ -725,7 +731,8 @@
                                                             <hr/>
                                                             <h3>&#x20A6; 105,000</h3>
                                                             <a href="#"
-                                                               class="go-book button float-button content-button transition hide-icon">
+                                                               class="go-book button float-button content-button transition hide-icon"
+                                                               onclick="showSpaces(2)">
                                                                 <i class="fa fa-angle-right transition2"></i>
                                                                 <span class="text transition color-bg">Book Now</span>
                                                             </a>
@@ -914,16 +921,33 @@
                                     <input name="name" type="text" id="name" class="form-control" placeholder="Full Name">
                                     <input name="email" type="text" id="email" placeholder="E-Mail Address">
                                     <input name="mobile" type="text" id="mobile" placeholder="Phone Number">
-                                    <select name="type" id="type">
+                                    <select name="type" onchange="showSpaces(this)">
+                                        <option value="Residence">Residence</option>
                                         <option value="Co-Working">Co-Working</option>
                                         <option value="Training">Training</option>
-                                        <option value="Residence">Residence</option>
                                     </select>
 
                                 </div>
                             </div>
                             <div class="right-colum">
                                 <div id="contact-form">
+
+                                    <select name="price" class="residence">
+                                        <option value="35000">Per Night - White Room (&#x20A6;35000)</option>
+                                        <option value="40000">Per Night - VE Signature Room (&#x20A6;40000)</option>
+                                    </select>
+
+                                    <select name="price" class="cowork" style="display: none;">
+                                        <option value="5000">Per Hour (5000)</option>
+                                        <option value="68500">Per Month/Desk (&#x20A6;68500)</option>
+                                        <option value="800000">Per Annum/Desk (&#x20A6;800000)</option>
+                                    </select>
+
+                                    <select name="price" class="train" style="display: none;">
+                                        <option value="20000">Per Hour (&#x20A6;20000)</option>
+                                        <option value="10500">Per Event (&#x20A6;10500)</option>
+                                    </select>
+
                                     <input name="seats" type="number" placeholder="Seats">
 
                                     <placeholder for="datefrom" class="span4">Date From</placeholder>
