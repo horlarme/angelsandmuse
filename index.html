@@ -73,41 +73,24 @@
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <!--================= Home start ================-->
-            <div class="swiper-slide">
-                <div id="slides">
-                    <ul class="slides-container">
-                        <!-- Slide 1 -->
-                        <li>
-                            <div style="background-image: url('images/bg/3.jpg');" class="slides-fullscreen-img"></div>
-                        </li>
-                        <!-- Slide 2 -->
-                        <li>
-                            <div style="background-image: url('images/bg/4.jpg');" class="slides-fullscreen-img"></div>
-                        </li>
-                        <!-- Slide 3 -->
-                        <li>
-                            <div style="background-image: url('images/bg/5.jpg');" class="slides-fullscreen-img"></div>
-                        </li>
-                    </ul>
-                </div><!-- Slider end -->
+            <div class="swiper-slide slide-bg" class="swiper-slide slide-bg" style="background:url(images/homebg.png)">
                 <div class="overlay"></div>
                 <div class="container">
                     <section class="homeholder no-bg">
                         <div class="content" id="home">
-                            <h2 class="elem">Welcome, this is Angels and Muse!</h2>
-                            <div class="home-separator"><span></span></div>
+                            <h2 class="elem centered">Enchant | Enlighten</h2>
+                            <div class="home-separator centered"><span></span></div>
                             <div class="tetx-rotator">
-                                <div class="tlt">
-                                    <ul class="texts">
-                                        <li>We provide you great Co-Working Space...</li>
-                                        <li>Give lecture in an comfortable Training Environment...</li>
-                                        <li>Angels&Muse, we are always here for you...</li>
-                                    </ul>
-                                </div>
+                                <h4 class="centered">Art, Residences, Co-working spaces, Training facilities,
+                                    Events.</h4>
+                                <p class="centered">Angels and Muse is a creative hub for nurturing and empowering
+                                    artistic talent. The space offers itself as a support system for expression,
+                                    productivity and education for the best creative hands and minds in Nigeria and
+                                    around the world.</p>
                             </div>
-                            <a href="#" class="button start-button  transition hide-icon">
+                            <a href="#" class="centered button start-button transition hide-icon">
                                 <i class="fa fa-angle-right transition2"></i>
-                                <span class="text transition color-bg">Let's Explore</span>
+                                <span class="text transition color-bg">Book Space</span>
                             </a>
                         </div>
                         <div class="clearfix"></div>
@@ -467,7 +450,7 @@
                                                                onclick="showSpaces(0)"
                                                                class="go-book button float-button content-button transition hide-icon">
                                                                 <i class="fa fa-angle-right transition2"></i>
-                                                                <span class="text transition color-bg">Book Now</span>
+                                                                <span class="text transition color-bg">Book</span>
                                                             </a>
                                                             <br/>
                                                         </div>
@@ -479,7 +462,7 @@
                                                                onclick="showSpaces(0)"
                                                                class="go-book button float-button content-button transition hide-icon">
                                                                 <i class="fa fa-angle-right transition2"></i>
-                                                                <span class="text transition color-bg">Book Now</span>
+                                                                <span class="text transition color-bg">Book</span>
                                                             </a>
                                                             <br/>
                                                         </div>
@@ -589,7 +572,7 @@
                                                                onclick="showSpaces(1)"
                                                                class="go-book button float-button content-button transition hide-icon">
                                                                 <i class="fa fa-angle-right transition2"></i>
-                                                                <span class="text transition color-bg">Book Now</span>
+                                                                <span class="text transition color-bg">Book</span>
                                                             </a><br/>
                                                         </div>
                                                         <div class="span4">
@@ -600,7 +583,7 @@
                                                                onclick="showSpaces(1)"
                                                                class="go-book button float-button content-button transition hide-icon">
                                                                 <i class="fa fa-angle-right transition2"></i>
-                                                                <span class="text transition color-bg">Book Now</span>
+                                                                <span class="text transition color-bg">Book</span>
                                                             </a><br/>
                                                         </div>
                                                         <div class="span4">
@@ -611,7 +594,7 @@
                                                                onclick="showSpaces(1)"
                                                                class="go-book button float-button content-button transition hide-icon">
                                                                 <i class="fa fa-angle-right transition2"></i>
-                                                                <span class="text transition color-bg">Book Now</span>
+                                                                <span class="text transition color-bg">Book</span>
                                                             </a>
                                                         </div>
                                                     </div>
@@ -721,9 +704,9 @@
                                                             <h3>&#x20A6; 20,000</h3>
                                                             <a href="#"
                                                                class="go-book button float-button content-button transition hide-icon"
-                                                            onclick="showSpaces(2)">
+                                                               onclick="showSpaces(2)">
                                                                 <i class="fa fa-angle-right transition2"></i>
-                                                                <span class="text transition color-bg">Book Now</span>
+                                                                <span class="text transition color-bg">Book</span>
                                                             </a><br/>
                                                         </div>
                                                         <div class="span6">
@@ -734,7 +717,7 @@
                                                                class="go-book button float-button content-button transition hide-icon"
                                                                onclick="showSpaces(2)">
                                                                 <i class="fa fa-angle-right transition2"></i>
-                                                                <span class="text transition color-bg">Book Now</span>
+                                                                <span class="text transition color-bg">Book</span>
                                                             </a>
                                                         </div>
                                                     </div>
@@ -913,12 +896,14 @@
                             <h3>Start Booking</h3>
                             <p>Fill the below forms to get your space kept for you.</p>
                         </div>
-                        <form method="post" action="php/contact.php" name="contactform" id="contactform" class="form-horizontal">
+                        <form method="post" action="php/book.php" name="contactform" id="contactform"
+                              class="form-horizontal">
                             <div class="left-colum">
                                 <!--contact form-->
                                 <div id="contact-form">
                                     <div id="message"></div>
-                                    <input name="name" type="text" id="name" class="form-control" placeholder="Full Name">
+                                    <input name="name" type="text" id="name" class="form-control"
+                                           placeholder="Full Name">
                                     <input name="email" type="text" id="email" placeholder="E-Mail Address">
                                     <input name="mobile" type="text" id="mobile" placeholder="Phone Number">
                                     <select name="type" onchange="showSpaces(this)">
@@ -1019,6 +1004,6 @@
 <script type="text/javascript" src="js/plugins.js"></script>
 <script type="text/javascript" src="js/superslides.js"></script>
 <script type="text/javascript" src="js/scripts.js"></script>
-<script type="text/javascript" src="js/initslideshow.js"></script>
+<!--<script type="text/javascript" src="js/initslideshow.js"></script>-->
 </body>
 </html>

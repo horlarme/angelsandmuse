@@ -74,7 +74,7 @@ function initKrobs() {
     });
     $(".start-button").click(function(b) {
         b.preventDefault();
-        a.swipeTo(1);
+        a.swipeTo(2);
     });
     $(".gw").click(function(b) {
         b.preventDefault();
