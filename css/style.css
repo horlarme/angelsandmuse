@@ -291,7 +291,7 @@ section {
 	width:100%;
 	float:left;
 	position:relative;
-	padding:150px   5%;
+	/*! padding:150px   5%; */
 	background:#fff;
 }
 section h3{
@@ -533,7 +533,7 @@ nav .active span {
 }
 #home {
 	float:none;
-	/*! margin:10% auto 0; */
+	margin:10% auto 0;
 	background: none;
 	padding:0;
 	z-index:10;
@@ -2640,4 +2640,11 @@ nav  a{
 }
 div#home.content{
 	color: white;
+}
+#booking-modal .head,#booking-modal .content
+{
+	padding: 10px 15px;
+}
+#booking-modal p{
+	margin: 10px;
 }
