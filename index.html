@@ -72,7 +72,23 @@
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <!--================= Home start ================-->
-            <div class="swiper-slide slide-bg" class="swiper-slide slide-bg" style="background:url(images/homebg.png)">
+            <div class="swiper-slide">
+                <div id="slides">                       
+                    <ul class="slides-container">                                   
+                        <!-- Slide 1 -->                                    
+                        <li>        
+                            <div style="background-image: url(images/homebg.png);" class="slides-fullscreen-img"></div>
+                        </li>                                   
+                        <!-- Slide 2 -->                                    
+                        <li>
+                            <div style="background-image: url('images/homebg2.jpg');" class="slides-fullscreen-img"></div>
+                        </li>                   
+                        <!-- Slide 3 -->                                    
+                        <li>    
+                            <div style="background-image: url('images/homebg3.jpg');" class="slides-fullscreen-img"></div>
+                        </li>                                           
+                    </ul>                                       
+                </div><!-- Slider end -->
                 <div class="overlay"></div>
                 <div class="container">
                     <section class="homeholder no-bg">
@@ -82,10 +98,14 @@
                             <div class="tetx-rotator">
                                 <h4 class="centered">Art, Residences, Co-working spaces, Training facilities,
                                     Events.</h4>
-                                <p class="centered">Angels and Muse is a creative hub for nurturing and empowering
-                                    artistic talent. The space offers itself as a support system for expression,
-                                    productivity and education for the best creative hands and minds in Nigeria and
-                                    around the world.<br/>
+                                <div class="tlt">
+                                        <ul class="texts">
+                                            <li>A creative hub for nurturing and empowering artistic talent.</li>
+                                            <li>The space offers itself as a support system for expression,...</li>
+                                            <li>Productivity and education for the best creative hands and minds in Nigeria and...</li>
+                                            <li>around the world</li>
+                                        </ul>
+                                    </div>
                                     <a href="#" class="centered button start-button transition hide-icon">
                                         <i class="fa fa-angle-right transition2"></i>
                                         <span class="text transition color-bg">Book Space</span>
@@ -125,18 +145,18 @@
                                                     class="fa fa-mail-reply-all"></i></a>
                                         </li>
                                         <li>
-                                            <a href="//twitter.com/Angelsandmuse" target="_blank"
+                                            <a href="http://twitter.com/Angelsandmuse" target="_blank"
                                                class="transition elem"><i
                                                     class="fa fa-twitter"></i></a>
                                         </li>
                                         <li>
-                                            <a href="//instagram.com/angelsandmuse" target="_blank"
+                                            <a href="http://instagram.com/angelsandmuse" target="_blank"
                                                class="transition elem"><i
                                                     class="fa fa-instagram"></i></a>
                                         </li>
                                         <li>
-                                            <a href="https://form.myjotform.com/80206252895559" target="_blank"
-                                               class="transition elem"><i
+                                            <a href="http://www.youtube.com/channel/UC0co77wDkpwlEJqfWqLmJ2A?view_as=subscriber"
+                                            target="_blank" class="transition elem"><i
                                                     class="fa fa-youtube"></i></a>
                                         </li>
                                     </ul>
@@ -235,9 +255,9 @@
                                 <h4>Collaborators</h4>
                             </div>
                             <div class="download-botton-holder">
-                                <a href="#" class="button content-button transition hide-icon">
-                                    <i class="fa fa-download transition2"></i>
-                                    <span class="text transition color-bg">Download Brochure</span></a>
+                                <!-- <a href="#" class="button content-button transition hide-icon"> -->
+                                    <!-- <i class="fa fa-download transition2"></i> -->
+                                    <!-- <span class="text transition color-bg">Download Brochure</span></a> -->
                             </div>
                         </div>
                         <div class="resume-container">
@@ -923,7 +943,7 @@
                                     </select>
 
                                     <select name="price" class="cowork" style="display: none;" onchange="setProd(this)">
-                                        <option value="3">Per Hour (5000)</option>
+                                        <option value="3">Per Hour (&#x20A6;5000)</option>
                                         <option value="4">Per Month/Desk (&#x20A6;68500)</option>
                                         <option value="5">Per Annum/Desk (&#x20A6;800000)</option>
                                     </select>
@@ -1035,6 +1055,6 @@
 <script type="text/javascript" src="js/plugins.js"></script>
 <script type="text/javascript" src="js/superslides.js"></script>
 <script type="text/javascript" src="js/scripts.js"></script>
-<!--<script type="text/javascript" src="js/initslideshow.js"></script>-->
+<script type="text/javascript" src="js/initslideshow.js"></script>
 </body>
 </html>
