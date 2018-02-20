@@ -83,11 +83,11 @@ function initKrobs() {
     });
     $(".go-contact").click(function (b) {
         b.preventDefault();
-        a.swipeTo(6);
+        a.swipeTo(7);
     });
     $(".go-book").click(function (b) {
         b.preventDefault();
-        a.swipeTo(7);
+        a.swipeTo(6);
     });
     $(".arrow-left").on("click", function (b) {
         b.preventDefault();

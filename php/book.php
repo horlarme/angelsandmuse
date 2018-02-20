@@ -107,19 +107,21 @@ try{
 
     if ($err) {
         // there was an error contacting the Paystack API
-        die('Please refresh this page: ' . $err);
+        echo 'Please refresh this page';
+        exit();
     }
 
     $tranx = json_decode($response);
 
     if (!$tranx->status) {
         // there was an error from the API
-        die('API returned error: ' . $tranx->message);
+        echo 'API returned error: ' . $tranx->message;
+        exit();
     }
 
 // redirect to page so User can pay
     header('Location: ' . $tranx->data->authorization_url);
 
 }catch(\Exception $e){
-    echo "Please refresh this page";
+    echo "Please refresh this page"; exit();
 }
