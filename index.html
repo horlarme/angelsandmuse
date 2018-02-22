@@ -54,7 +54,6 @@
             <a href="#" class="swp"><span class="transition"></span>Co-Working Space</a>
             <a href="#" class="swp"><span class="transition"></span>Multidisciplinary</a>
             <a href="#" class="swp"><span class="transition"></span>Art</a>
-            <a href="#" class="swp"><span class="transition"></span>Book</a>
             <a href="#" class="swp"><span class="transition"></span>Contact</a>
             <a href="events.html"><span class="transition"></span>Events</a>
         </nav>
@@ -106,6 +105,10 @@
                                             <li>around the world</li>
                                         </ul>
                                     </div>
+                                    <a href="#" class="centered button transition hide-icon">
+                                        <i class="fa fa-angle-right transition2"></i>
+                                        <span class="text transition color-bg">Request a Tour</span>
+                                    </a>
                                     <a href="#" class="centered button start-button transition hide-icon">
                                         <i class="fa fa-angle-right transition2"></i>
                                         <span class="text transition color-bg">Book Space</span>
@@ -466,8 +469,7 @@
                                                             <h3><strong>Per Night - White Room</strong></h3>
                                                             <hr/>
                                                             <h3>&#x20A6; 35,000</h3>
-                                                            <a href="#"
-                                                               onclick="showSpaces(0)"
+                                                            <a href="#booking-modal"
                                                                class="go-book button float-button content-button transition hide-icon">
                                                                 <i class="fa fa-angle-right transition2"></i>
                                                                 <span class="text transition color-bg">Book</span>
@@ -478,8 +480,7 @@
                                                             <h3><strong>Per Night - VE Signature Room</strong></h3>
                                                             <hr/>
                                                             <h3>&#x20A6; 40,000</h3>
-                                                            <a href="#"
-                                                               onclick="showSpaces(0)"
+                                                            <a href="#booking-modal"
                                                                class="go-book button float-button content-button transition hide-icon">
                                                                 <i class="fa fa-angle-right transition2"></i>
                                                                 <span class="text transition color-bg">Book</span>
@@ -583,8 +584,7 @@
                                                             <h3><strong>Per Day</strong><br/><br/></h3>
                                                             <hr/>
                                                             <h3>&#x20A6; 5,000</h3>
-                                                            <a href="#"
-                                                               onclick="showSpaces(1)"
+                                                            <a href="#booking-modal"
                                                                class="go-book button float-button content-button transition hide-icon">
                                                                 <i class="fa fa-angle-right transition2"></i>
                                                                 <span class="text transition color-bg">Book</span>
@@ -594,8 +594,7 @@
                                                             <h3><strong>Per Month Per Desk</strong></h3>
                                                             <hr/>
                                                             <h3>&#x20A6; 685,000</h3>
-                                                            <a href="#"
-                                                               onclick="showSpaces(1)"
+                                                            <a href="#booking-modal"
                                                                class="go-book button float-button content-button transition hide-icon">
                                                                 <i class="fa fa-angle-right transition2"></i>
                                                                 <span class="text transition color-bg">Book</span>
@@ -605,8 +604,7 @@
                                                             <h3><strong>Per Annum Per Desk</strong></h3>
                                                             <hr/>
                                                             <h3>&#x20A6; 800,000</h3>
-                                                            <a href="#"
-                                                               onclick="showSpaces(1)"
+                                                            <a href="#booking-modal"
                                                                class="go-book button float-button content-button transition hide-icon">
                                                                 <i class="fa fa-angle-right transition2"></i>
                                                                 <span class="text transition color-bg">Book</span>
@@ -715,9 +713,8 @@
                                                             <h3><strong>Per Hour</strong></h3>
                                                             <hr/>
                                                             <h3>&#x20A6; 20,000</h3>
-                                                            <a href="#"
+                                                            <a href="#booking-modal"
                                                                class="go-book button float-button content-button transition hide-icon"
-                                                               onclick="showSpaces(2)">
                                                                 <i class="fa fa-angle-right transition2"></i>
                                                                 <span class="text transition color-bg">Book</span>
                                                             </a><br/>
@@ -726,9 +723,8 @@
                                                             <h3><strong>Per Event</strong></h3>
                                                             <hr/>
                                                             <h3>&#x20A6; 105,000</h3>
-                                                            <a href="#"
+                                                            <a href="#booking-modal"
                                                                class="go-book button float-button content-button transition hide-icon"
-                                                               onclick="showSpaces(2)">
                                                                 <i class="fa fa-angle-right transition2"></i>
                                                                 <span class="text transition color-bg">Book</span>
                                                             </a>
@@ -805,128 +801,6 @@
                 </div>
             </div>
 
-            <!--============== Booking start ================-->
-            <div class="swiper-slide slide-bg" style="background:url(images/bg/8.jpg)">
-                <div class="container">
-                    <!--page title-->
-                    <div class="page-title">
-                        <div class="content">
-                            <h2>Book <span>Now</span></h2>
-                            <div class="clearfix"></div>
-                            <p>Request for a space now...</p>
-                            <div class="clearfix"></div>
-                            <div class="color-separator"></div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="overlay"></div>
-                    </div>
-                    <!--section contact top-->
-                    <section id="contact">
-                        <div class="contact-header">
-                            <h3>Start Booking</h3>
-                            <p>Fill the below forms to get your space kept for you.</p>
-                        </div>
-                        <form method="post" action="php/book.php" class='booking' name="contactform" id="contactform"
-                              class="form-horizontal">
-                            <div class="left-colum">
-                                <!--contact form-->
-                                <div id="contact-form">
-                                    <div id="message"></div>
-                                    <input name="name" type="text" id="name" class="form-control"
-                                           placeholder="Full Name">
-                                    <input name="email" type="text" id="email" placeholder="E-Mail Address">
-                                    <input name="mobile" type="text" id="mobile" placeholder="Phone Number">
-                                    <select name="type" onchange="showSpaces(this)">
-                                        <option value="Residence">Residence</option>
-                                        <option value="Co-Working Space">Co-Working Space</option>
-                                        <option value="Training Room">Training Room</option>
-                                    </select>
-
-                                </div>
-                            </div>
-                            <div class="right-colum">
-                                <div id="contact-form">
-
-                                    <select name="price" class="residence" onchange="setProd(this)">
-                                        <option value='1'>Per Night - White Room (&#x20A6;35000)</option>
-                                        <option value="2">Per Night - VE Signature Room (&#x20A6;40000)</option>
-                                    </select>
-
-                                    <select name="price" class="cowork" style="display: none;" onchange="setProd(this)">
-                                        <option value="3">Per Hour (&#x20A6;5000)</option>
-                                        <option value="4">Per Month/Desk (&#x20A6;68500)</option>
-                                        <option value="5">Per Annum/Desk (&#x20A6;800000)</option>
-                                    </select>
-
-                                    <select name="price" class="train" style="display: none;" onchange="setProd(this)">
-                                        <option value="6">Per Hour (&#x20A6;20000)</option>
-                                        <option value="7">Per Event (&#x20A6;105000)</option>
-                                    </select>
-
-                                    <input name="period" type="number" min="1" max="10" placeholder="Stay period">
-                                    <p><strong>Note: The above will be determined by your selected space. If its per
-                                        event, 2 means 2 events.</strong></p>
-
-                                    <placeholder for="datefrom" class="span4">Date From</placeholder>
-                                    <input name="datefrom" placeholder="From" class="span4" type="date">
-                                    <input name="timefrom" placeholder="To" class="span4" type="time">
-                                    <div class="clear"></div>
-
-                                    <textarea name="comments" placeholder="Enter additional message here..."
-                                              style="margin-top:0;padding: 10px;-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;"></textarea>
-                                    <input type="submit" style="max-height: 1px;background: none;padding: 0;"/>
-
-                                    <a href="#booking-modal"
-                                       class="open-booking button float-button content-button transition hide-icon"
-                                       onclick="displaySummary()">
-                                        <i class="fa fa-angle-right transition2"></i>
-                                        <span class="text transition color-bg">Book</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </form>
-                        <!--contact info-->
-                        <div class="contact-info gray-bg">
-                            <ul>
-                                <li>
-                                    <i class="fa fa-phone"></i>
-                                    <a href="#" class="transition">+234 808-428-5987 </a>
-                                    <span class="contact-tooltip">Phone</span>
-                                </li>
-                                <li>
-                                    <i class="fa fa-envelope-o"></i>
-                                    <a href="#" class="transition">info@angelsandmuse.com</a>
-                                    <span class="contact-tooltip">E-Mail</span>
-                                </li>
-                                <li>
-                                    <i class="fa fa-home"></i>
-                                    <a href="#" class="transition">5, Sumbo Jibowu Street, Off Awolowo Rd, Ikoyi,
-                                        Lagos</a>
-                                    <span class="contact-tooltip">Location</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </section>
-                    <!--section contact social-->
-                    <section id="contact-social">
-                        <div class="overlay"></div>
-                        <div class="bg bg-parallax" style="background:url(images/bg/5.jpg)"></div>
-                        <div class="content">
-                            <ul>
-                                <li><a href="mailto:info@angelsandmuse.com" target="_blank" class="transition">Mail</a>
-                                </li>
-                                <li><a href="//twitter.com/Angelsandmuse" target="_blank" class="transition">Twitter</a>
-                                </li>
-                                <li><a href="//instagram.com/angelsandmuse" target="_blank"
-                                       class="transition">Instagram</a></li>
-                                <li><a href="//www.youtube.com/channel/UC0co77wDkpwlEJqfWqLmJ2A?view_as=subscriber"
-                                       target="_blank" class="transition">Youtube</a></li>
-                            </ul>
-                        </div>
-                    </section>
-                </div>
-            </div>
-            <!--============== Booking end ================-->
             <!--============== Contact start ================-->
             <div class="swiper-slide slide-bg" style="background:url(images/bg/8.jpg)">
                 <div class="container">
@@ -1014,32 +888,63 @@
     </div>
     <!--contact  end-->
     <section id="booking-modal" class=" mfp-hide">
-        <div class="head row-fluid">
-            <h2 class="span12">Booking Summary</h2>
+        <div class="contact-header">
+            <h3>Start Booking</h3>
+            <p>Fill the below forms to get your space kept for you.</p>
         </div>
-        <div class="content row-fluid">
-            <div class="span6">
-                <p>Full Name: <strong class="fullname"></strong></p>
-                <p>E-Mail: <strong class="email"></strong></p>
-                <p>Mobile: <strong class="mobile"></strong></p>
-                <p>Type: <strong class="type"></strong></p>
-                <p>Space: <strong class="space"></strong></p>
-                <p>Date: <strong class="date"></strong></p>
+        <form method="post" action="php/book.php" class='booking' name="contactform" id="contactform"
+              class="form-horizontal">
+            <div class="left-colum">
+                <!--contact form-->
+                <div id="contact-form">
+                    <div id="message"></div>
+                    <input name="name" type="text" id="name" class="form-control"
+                           placeholder="Full Name">
+                    <input name="email" type="text" id="email" placeholder="E-Mail Address">
+                    <input name="mobile" type="text" id="mobile" placeholder="Phone Number">
+                    <select name="type" onchange="showSpaces(this)">
+                        <option value="Residence">Residence</option>
+                        <option value="Co-Working Space">Co-Working Space</option>
+                        <option value="Training Room">Multidisciplinary Room</option>
+                    </select>
+
+                </div>
             </div>
-            <div class="span6">
-                <p>Additional Info.: <br/><span class="add_info"></span></p>
-                <p>Price: <span class="price"></span> x <span class="period"></span> </p>
-                <p>Total Price: <strong class="total_price"></strong></p>
-                <br />
-                <br />
-                <a href="#"
-                   class="button float-button content-button hide-icon"
-                   onclick="submitBooking()">
-                    <i class="fa fa-angle-right transition2"></i>
-                    <span class="text transition color-bg">Proceed</span>
-                </a>
+            <div class="right-colum">
+                <div id="contact-form">
+
+                    <select name="price" class="residence" onchange="setProd(this)">
+                        <option value='1'>Per Night - White Room (&#x20A6;35000)</option>
+                        <option value="2">Per Night - VE Signature Room (&#x20A6;40000)</option>
+                    </select>
+
+                    <select name="price" class="cowork" style="display: none;" onchange="setProd(this)">
+                        <option value="3">Per Hour (&#x20A6;5000)</option>
+                        <option value="4">Per Month/Desk (&#x20A6;68500)</option>
+                        <option value="5">Per Annum/Desk (&#x20A6;800000)</option>
+                    </select>
+
+                    <select name="price" class="train" style="display: none;" onchange="setProd(this)">
+                        <option value="6">Per Hour (&#x20A6;20000)</option>
+                        <option value="7">Per Event (&#x20A6;105000)</option>
+                    </select>
+
+                    <input name="period" type="number" min="1" max="10" placeholder="Stay period">
+                    <p><strong>Note: The above will be determined by your selected space. If its per
+                        event, 2 means 2 events.</strong></p>
+
+                    <placeholder for="datefrom" class="span4">Date From</placeholder>
+                    <input name="datefrom" placeholder="From" class="span4" type="date">
+                    <input name="timefrom" placeholder="To" class="span4" type="time">
+                    <div class="clear"></div>
+
+                    <textarea name="comments" placeholder="Enter additional message here..."
+                              style="margin-top:0;padding: 10px;-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;"></textarea>
+                    <input type="submit" 
+                        class="open-booking button float-button content-button transition hide-icon" value="Book" />
+                </div>
             </div>
-        </div>
+        </form>
     </section>
 </div>
 <!-- Main end -->

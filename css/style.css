@@ -2649,3 +2649,13 @@ div#home.content{
 #booking-modal p{
 	margin: 10px;
 }
+#booking-modal #contact-form{
+	margin-top: 0;
+	padding-top: 20px;
+}
+#booking-modal .contact-header{
+	padding: 20px;
+}
+#booking-modal .contact-header h3{
+	text-align: left;
+}

@@ -75,17 +75,13 @@ function initKrobs() {
     });
     $(".start-button").click(function (b) {
         b.preventDefault();
-        a.swipeTo(7);
+        a.swipeTo(2);
     });
     $(".gw").click(function (b) {
         b.preventDefault();
         a.swipeTo(2);
     });
     $(".go-contact").click(function (b) {
-        b.preventDefault();
-        a.swipeTo(7);
-    });
-    $(".go-book").click(function (b) {
         b.preventDefault();
         a.swipeTo(6);
     });
@@ -644,35 +640,7 @@ prod['5'] = {name: 'Per annum per desk', price: 800000};
 prod['6'] = {name: 'Per hour', price: 20000};
 prod['7'] = {name: 'Per event', price: 105000};
 
-function displaySummary() {
-    var f = $('form.booking input[name="name"]').val();
-    var e = $('form.booking input[name="email"]').val();
-    var m = $('form.booking input[name="mobile"]').val();
-    var t = $('form.booking select[name="type"]').val();
-    var x = $('form.booking input[name="period"]').val();
-    var d = $('form.booking input[name="datefrom"]').val() + " " + $('form.booking input[name="timefrom"]').val();
-    var c = $('form.booking textarea').val();
-
-    var p = prod[s].price;
-    var n = prod[s].name;
-
-    $('#booking-modal .fullname').text(f);
-    $('#booking-modal .email').text(e);
-    $('#booking-modal .mobile').text(m);
-    $('#booking-modal .type').text(t);
-    $('#booking-modal .space').text(n);
-    $('#booking-modal .date').text(d);
-    $('#booking-modal .add_info').text(c);
-    $('#booking-modal .price').text(p);
-    $('#booking-modal .period').text(x);
-    $('#booking-modal .total_price').text((p * x));
-}
-
-function submitBooking() {
-    $('form.booking').submit();
-}
-
-$('.open-booking').magnificPopup({
+$('.go-book').magnificPopup({
     type: 'inline',
     midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
 });
