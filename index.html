@@ -104,16 +104,18 @@
                                             <li>Productivity and education for the best creative hands and minds in Nigeria and...</li>
                                             <li>around the world</li>
                                         </ul>
-                                    </div>
-                                    <a href="#" class="centered button transition hide-icon">
+                                </div>
+                                <div class="centered">
+                                    <a href="https://calendly.com/angelsandmuse/tour/02-23-2018"
+                                    class="centered button transition hide-icon">
                                         <i class="fa fa-angle-right transition2"></i>
                                         <span class="text transition color-bg">Request a Tour</span>
                                     </a>
-                                    <a href="#" class="centered button start-button transition hide-icon">
+                                    <a href="#booking-modal" class="centered button go-book transition hide-icon">
                                         <i class="fa fa-angle-right transition2"></i>
                                         <span class="text transition color-bg">Book Space</span>
                                     </a>
-                                </p>
+                                </div>
                             </div>
                         </div>
                         <div class="clearfix"></div>
@@ -889,8 +891,7 @@
     <!--contact  end-->
     <section id="booking-modal" class=" mfp-hide">
         <div class="contact-header">
-            <h3>Start Booking</h3>
-            <p>Fill the below forms to get your space kept for you.</p>
+            <h3 style="text-align: left;">Start Booking</h3>
         </div>
         <form method="post" action="php/book.php" class='booking' name="contactform" id="contactform"
               class="form-horizontal">
@@ -903,6 +904,7 @@
                     <input name="email" type="text" id="email" placeholder="E-Mail Address">
                     <input name="mobile" type="text" id="mobile" placeholder="Phone Number">
                     <select name="type" onchange="showSpaces(this)">
+                        <option>Select Item</option>
                         <option value="Residence">Residence</option>
                         <option value="Co-Working Space">Co-Working Space</option>
                         <option value="Training Room">Multidisciplinary Room</option>
@@ -912,6 +914,9 @@
             </div>
             <div class="right-colum">
                 <div id="contact-form">
+                    <select name="price">
+                        <option>Select Item</option>
+                    </select>
 
                     <select name="price" class="residence" onchange="setProd(this)">
                         <option value='1'>Per Night - White Room (&#x20A6;35000)</option>
@@ -945,6 +950,7 @@
                 </div>
             </div>
         </form>
+        <div class="clearfix"></div>
     </section>
 </div>
 <!-- Main end -->

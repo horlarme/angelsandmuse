@@ -2642,6 +2642,12 @@ nav  a{
 div#home.content{
 	color: white;
 }
+#booking-modal{
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	float: none;
+}
 #booking-modal .head,#booking-modal .content
 {
 	padding: 10px 15px;
@@ -2658,4 +2664,10 @@ div#home.content{
 }
 #booking-modal .contact-header h3{
 	text-align: left;
+}
+
+@media only screen and  (max-width: 768px) {
+	#booking-modal{
+		width: 100%;
+	}
 }
