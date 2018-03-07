@@ -190,6 +190,8 @@ p {
 	background-position:center;
 	background-repeat:repeat;
 	z-index:1;
+	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
 }
 .overlay {
 	position:absolute;
@@ -987,9 +989,10 @@ footer{
 }
 .resume-container .overlay {
 	background:#fff;
+	opacity: 0.1;
 }
 .resume-container:hover .overlay {
-	opacity:0.5;
+	opacity:0.1;
 }
 .resume-head {
 	width:35%;
@@ -1058,9 +1061,11 @@ footer{
 	padding:10px 20px;
 }
 .resume-container:hover .bg {
-	-webkit-transform: scale(1.2) rotate(8deg);
-	-moz-transform:scale(1.2) rotate(8deg);
-	transform: scale(1.2) rotate(8deg);
+	-webkit-filter: grayscale(0); /* Safari 6.0 - 9.0 */
+  filter: grayscale(0);
+}
+#resume p{
+	text-shadow: 0 0 0.10px black;
 }
 /*------ services -------------------------------------------------*/
 .services-holder {
@@ -2526,7 +2531,7 @@ footer{
 	background:rgba(49,49,49,0.6);
 }
 .resume-container:hover .overlay {
-	opacity:0.8;
+	opacity:0.2;
 }	
 }
 @media only screen and  (max-width: 979px) {

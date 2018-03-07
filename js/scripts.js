@@ -126,22 +126,22 @@ function initKrobs() {
     });
     $(".tlt").textillate({
         loop: true,
-        minDisplayTime: 2e3,
+        minDisplayTime: 300,
         initialDelay: 0,
         autoStart: true,
         "in": {
             effect: "flipInY",
             delayScale: 2.5,
-            delay: 50,
-            sync: false,
+            delay: 10,
+            sync: true,
             shuffle: false,
             reverse: false
         },
         out: {
             effect: "flipOutY",
             delayScale: 2.5,
-            delay: 50,
-            sync: false,
+            delay: 10,
+            sync: true,
             shuffle: false,
             reverse: false
         }
