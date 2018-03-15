@@ -27,7 +27,7 @@
     <!--=============== google map ===============-->
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 </head>
-<body onLoad="initialize()">
+<body>
 <!--================= main start ================-->
 <div id="main">
     <div class="nav-holder">
@@ -70,34 +70,11 @@
                     </div>
                 </div>
                 <div class="single-page">
-                    <div class="content">
+                    <div class="content events">
                         <div class="row-fluid">
                             <div class="span8">
                                 <!-- Standard Post -->
-                                <div class="post">
-                                    <div class="post-media">
-                                        <a href="blog-single.html" class="fadelink">
-                                        <img src="images/bg/9.jpg" class="respimg transition" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="post-title">
-                                        <div class="post-meta">
-                                            <ul>
-                                                <li>02 Frb</li>
-                                                <li>22 com</li>
-                                                <li><i class="fa fa-heart-o"></i> 151</li>
-                                            </ul>
-                                        </div>
-                                        <div class=" clearfix"></div>
-                                        <h3><a href="blog-single.html" class="fadelink">Phasellus tempor </a></h3>
-                                    </div>
-                                    <div class="post-body">
-                                        <p>Etiam in nulla arcu, ut vehicula velit. Vivamus dapibus rutrum mi ut aliquam. In hac habitasse platea dictumst. Integer sagittis neque a tortor tempor in porta sem vulputate. Donec varius felis fermentum nisl imperdiet at molestie purus porta.</p>
-                                        <div>
-                                            <a href="#" class="button  float-button content-button  transition hide-icon"><i class="fa fa-angle-right transition2"></i><span class="text transition color-bg">View</span></a>
-                                        </div>
-                                    </div>
-                                </div>
+<!--                                
                                 <div class="pagination-holder">
                                     <div class="pagination">
                                         <a href="#" class="prevposts-link transition"><i class="fa fa-chevron-left"></i></a>
@@ -105,7 +82,7 @@
                                         <a href="#" class="blog-page current-page transition">2</a>
                                         <a href="#" class="nextposts-link transition"><i class="fa fa-chevron-right"></i></a>
                                     </div>
-                                </div>
+                                </div>-->
                             </div>
                             <div class="span4">
                                 <div class="sidebar">
@@ -158,5 +135,10 @@
         <script type="text/javascript" src="js/jpreloader.min.js"></script>
         <script type="text/javascript" src="js/plugins.js"></script>
         <script type="text/javascript" src="js/scripts.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                getEvents();
+            });
+        </script>
     </body>
 </html>

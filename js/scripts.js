@@ -600,6 +600,8 @@ $(document).ready(function () {
     initKrobs();
     initajaxjs();
     setMinValueForDateFields();
+    
+    $('select[name=type]').change();
 });
 
 function showSpaces(e) {
@@ -619,19 +621,46 @@ var forms = document.querySelectorAll('select[name=price]');
 function changeForm(index) {
     for (var i = 0; i <= (forms.length - 1); i++) {
         forms[i].style.display = 'none';
+        $(forms[i]).attr('disabled', 'true');
         if (i == index) {
             forms[index].style.display = 'block';
+            $(forms[index]).removeAttr('disabled');
         }
     }
+    
+    updatePrice(index);
 }
+
+function updatePrice(priceIndex){
+    priceElement = $('#price'),
+    couponElement = $('#discount'),
+    unitElement = $('#unit'),
+    totalPriceElement = $('#totalPrice'),
+    price = prod[priceIndex].price,
+    spaces = $('input[name=period]').val();
+    
+    priceElement.text(accounting.formatMoney(price, "₦", 2, ",", "."));
+    
+    unitElement.text(spaces);
+    
+    couponElement.text(couponDiscount);
+    
+    totalPrice = accounting.formatMoney(((price * spaces) - (couponDiscount / 100) * (price * spaces)), "₦", 2,",",".");
+    
+    totalPriceElement.text(totalPrice);
+}
+
+var couponDiscount = 00;
 
 var s;
 
 function setProd(e) {
     s = (e.value);
+    updatePrice(s);
 }
 
 var prod = [];
+prod['0'] = {price: 00, name: '----'};
 prod['1'] = {price: 35000, name: 'Per Night - White Room'};
 prod['2'] = {price: 40000, name: 'Per Night - VE Signature Room'};
 prod['3'] = {price: 5000, name: 'Per Hour'};
@@ -642,5 +671,115 @@ prod['7'] = {name: 'Per event', price: 105000};
 
 $('.go-book').magnificPopup({
     type: 'inline',
-    midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+    midClick: true
 });
+
+$('input[name=coupon]').change(function(e){
+    
+    $('#coupon_error').text('Loading discount...');
+    
+    var email = $('.booking input[name=email]').val();
+    
+    $.getJSON('http://admin.angelsandmuse.com/coupons/get_discount/' + e.target.value + '/' + email + '.json')
+//    $.getJSON('http://localhost:8765/coupons/get_discount/' + e.target.value + '/' + email + '.json')
+        .done(function(e){
+            var today = new Date();
+    
+                if (e['coupon'][0]) {
+
+                    couponDiscount = e['coupon'][0].discount;
+
+                    $('#coupon_error').text('Coupon discount added!');
+
+                    if (e['isUsed']) {
+
+                        couponDiscount = 0;
+
+                        $('#coupon_error').text('Coupon already used!');
+                        return;
+                    }
+
+                    if (new Date(e['coupon'][0]['end']) < today) {
+
+                        couponDiscount = 0;
+
+                        $('#coupon_error').text('Coupon already expired!');
+                        return;
+                    }
+
+                    if (new Date(e['coupon'][0]['start']) > today) {
+
+                        couponDiscount = 0;
+
+                        $('#coupon_error').text('Coupon cannot be used as of today!');
+                        return;
+
+                    }
+
+                } else {
+
+                    couponDiscount = 0;
+
+                    $('#coupon_error').text('The provided coupon is not found!');
+
+                }
+            
+            $('select[name=type]').change();
+            
+        })
+        .fail(function(){
+            couponDiscount = 00;
+            $('select[name=type]').change();
+            $('#coupon_error').text("There was an error with using the coupon, try another!!!");
+        });
+});
+
+function getEvents(){
+
+$.getJSON('http://localhost:8765/events/events.json')
+        .done(function(e){
+            
+            for(var i = 9; i >= 0; i--){
+                console.log(i);
+                if(!e.events[i]){
+                    continue;
+                }
+                
+                event = e.events[i];
+                  
+                var title = (event.event),
+                        image = (event.featured_img),
+                        galleryLabel = (event.gallery_label),
+                        galleryLink = (event.gallery_link),
+                        registrationLink = (event.registration_link),
+                        registrationLabel = (event.registration_label),
+                        content = (event.event_desc),
+                        date = new Date(event.event_date);
+        
+                    $('.events .span8').prepend(eventTemplate(title, image, content, date, registrationLink, registrationLabel, galleryLink, galleryLabel));
+            }
+            
+        })
+        .fail(function(){
+            eventsLoader();
+        });
+        
+}
+
+function eventTemplate(title, image, content, date, registrationLink, registrationLabel = "Register", galleryLink = false, galleryLabel = false){
+var temp = '<div class="post"><div class="post-media"><a href="blog-single.html" class="fadelink">' +
+        '<img src="' + image + '" class="respimg transition" alt="' + title + '">' +
+        '</a></div><div class="post-title">' +
+        '<div class="post-meta"><ul><li>' + date + '</li></ul>' +
+        '</div><div class=" clearfix"></div><h3><a href="#" class="fadelink">' + title + '</a></h3>' +
+        '</div><div class="post-body"><p>' + content + '</p><div>' +
+        '<a href="' + registrationLink + '" class="button  float-button content-button  transition hide-icon"><i class="fa fa-angle-right transition2"></i><span class="text transition color-bg">' + registrationLabel + '</span></a>';
+
+    if (galleryLink){
+            temp += '<a href="' + galleryLink + '" class="button  float-button content-button  transition hide-icon"><i class="fa fa-angle-right transition2"></i><span class="text transition color-bg">' + galleryLabel + '</span></a>';
+        }
+        
+    temp += '</div></div></div>';
+    
+    return $(temp);
+    }
