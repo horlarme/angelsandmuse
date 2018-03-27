@@ -126,12 +126,12 @@ function initKrobs() {
     });
     $(".tlt").textillate({
         loop: true,
-        minDisplayTime: 300,
+        minDisplayTime: 1000,
         initialDelay: 0,
         autoStart: true,
         "in": {
             effect: "flipInY",
-            delayScale: 2.5,
+            delayScale: 3.5,
             delay: 10,
             sync: true,
             shuffle: false,
@@ -139,7 +139,7 @@ function initKrobs() {
         },
         out: {
             effect: "flipOutY",
-            delayScale: 2.5,
+            delayScale: 3.5,
             delay: 10,
             sync: true,
             shuffle: false,
@@ -736,7 +736,7 @@ $('input[name=coupon]').change(function(e){
 
 function getEvents(){
 
-$.getJSON('http://localhost:8765/events/events.json')
+$.getJSON('http://admin.angelsandmuse.com/events/events.json')
         .done(function(e){
             
             for(var i = 9; i >= 0; i--){
