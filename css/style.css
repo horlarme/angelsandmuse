@@ -1309,12 +1309,12 @@ footer{
     z-index:3;
     float:left;
     width:100%;
-    height:100%;
+    height:auto;
 }
-#folio_container .mix { 
+/*#folio_container .mix { 
     opacity: 0;
     display: none;
-}
+}*/
 #options{
     width:100%;
     position:relative;
@@ -1366,11 +1366,11 @@ footer{
     position:relative;
     z-index:1;
 }
-.box:hover img {
+/*.box:hover img {
     -webkit-transform: scale(1.2) rotate(8deg);
     -moz-transform:scale(1.2) rotate(8deg);
     transform: scale(1.2) rotate(8deg);
-}
+}*/
 .folio-item{
     position:absolute;
     width:100%;
@@ -2704,4 +2704,8 @@ div#home.content{
         /*padding:150px 50px;*/
         border-bottom:1px solid #eee;
     }
+}
+#links img{
+    max-width: 320px;
+    margin: 10px;
 }

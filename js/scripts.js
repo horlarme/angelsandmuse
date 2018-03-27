@@ -225,58 +225,58 @@ function initKrobs() {
         return this.pushStack(c);
     };
     $("<span class='scale-callback transition2'></span>").duplicate(6).appendTo(".folio-overlay ");
-    $(".box").hover(function () {
-        var a = $(this);
-        var b = $(this).find("div.folio-item");
-        var c = $(this).find(".folio-item span.fol-but");
-        var d = $(this).find(".folio-overlay span");
-        var e = {
-            queue: true,
-            duration: 500,
-            easing: "swing"
-        };
-        var f = {
-            queue: true,
-            duration: 900,
-            easing: "easeInOutElastic"
-        };
-        if (a.hasClass("notvisible")) {
-            b.stop(true, true).animate({
-                opacity: "1"
-            }, e);
-            c.delay(350).animate({
-                opacity: "1",
-                bottom: "40%"
-            }, f);
-            setTimeout($.proxy(function () {
-                d.each(function (a) {
-                    var b = $(this);
-                    setTimeout(function () {
-                        b.removeClass("scale-callback");
-                    }, 50 * a);
-                });
-            }, this), 250);
-            a.removeClass("notvisible");
-        } else {
-            b.stop(true, true).animate({
-                opacity: "0"
-            }, f);
-            c.animate({
-                opacity: "0",
-                bottom: "-50%"
-            }, e);
-            setTimeout($.proxy(function () {
-                d.each(function (a) {
-                    var b = $(this);
-                    setTimeout(function () {
-                        b.addClass("scale-callback");
-                    }, 50 * a);
-                });
-            }, this), 250);
-            a.addClass("notvisible");
-        }
-        return false;
-    });
+    // $(".box").hover(function () {
+    //     var a = $(this);
+    //     var b = $(this).find("div.folio-item");
+    //     var c = $(this).find(".folio-item span.fol-but");
+    //     var d = $(this).find(".folio-overlay span");
+    //     var e = {
+    //         queue: true,
+    //         duration: 500,
+    //         easing: "swing"
+    //     };
+    //     var f = {
+    //         queue: true,
+    //         duration: 900,
+    //         easing: "easeInOutElastic"
+    //     };
+    //     if (a.hasClass("notvisible")) {
+    //         b.stop(true, true).animate({
+    //             opacity: "1"
+    //         }, e);
+    //         c.delay(350).animate({
+    //             opacity: "1",
+    //             bottom: "40%"
+    //         }, f);
+    //         setTimeout($.proxy(function () {
+    //             d.each(function (a) {
+    //                 var b = $(this);
+    //                 setTimeout(function () {
+    //                     b.removeClass("scale-callback");
+    //                 }, 50 * a);
+    //             });
+    //         }, this), 250);
+    //         a.removeClass("notvisible");
+    //     } else {
+    //         b.stop(true, true).animate({
+    //             opacity: "0"
+    //         }, f);
+    //         c.animate({
+    //             opacity: "0",
+    //             bottom: "-50%"
+    //         }, e);
+    //         setTimeout($.proxy(function () {
+    //             d.each(function (a) {
+    //                 var b = $(this);
+    //                 setTimeout(function () {
+    //                     b.addClass("scale-callback");
+    //                 }, 50 * a);
+    //             });
+    //         }, this), 250);
+    //         a.addClass("notvisible");
+    //     }
+    //     return false;
+    // });
 // owl carousel   ----------------------------------------
     var d = $("#about-slider");
     d.owlCarousel({
@@ -518,40 +518,40 @@ $(window).load(function () {
         var a = $("#project-page-holder");
         var b = $(".open-project-link");
         index = b.length;
-        $(".open-project-link").click(function () {
-            $(".container").scrollTo("#options", 600, {
-                axis: "y"
-            });
-            if ($(this).hasClass("actajax")) ; else {
-                lastIndex = index;
-                index = $(this).index();
-                b.removeClass("actajax");
-                $(this).addClass("actajax");
-                var a = $(this).find("a.open-project").attr("href") + " .item-data";
-                $("#project-page-data").animate({
-                    opacity: 0
-                }, 400, function () {
-                    $("#project-page-data").load(a, function (a) {
-                        var b = $(".helper");
-                        var c = b.height();
-                        $("#project-page-data").css({
-                            height: ""
-                        });
-                    });
-                    $("#project-page-data").animate({
-                        opacity: 1
-                    }, 400);
-                });
-                $("#project-page-holder").slideUp(600, function () {
-                    $("#project-page-data").css("visibility", "visible");
-                }).delay(500).slideDown(1e3, function () {
-                    $("#project-page-data").fadeIn("slow", function () {
-                        initajaxjs();
-                    });
-                });
-            }
-            return false;
-        });
+        // $(".open-project-link").click(function () {
+        //     $(".container").scrollTo("#options", 600, {
+        //         axis: "y"
+        //     });
+        //     if ($(this).hasClass("actajax")) ; else {
+        //         lastIndex = index;
+        //         index = $(this).index();
+        //         b.removeClass("actajax");
+        //         $(this).addClass("actajax");
+        //         var a = $(this).find("a.open-project").attr("href") + " .item-data";
+        //         $("#project-page-data").animate({
+        //             opacity: 0
+        //         }, 400, function () {
+        //             $("#project-page-data").load(a, function (a) {
+        //                 var b = $(".helper");
+        //                 var c = b.height();
+        //                 $("#project-page-data").css({
+        //                     height: ""
+        //                 });
+        //             });
+        //             $("#project-page-data").animate({
+        //                 opacity: 1
+        //             }, 400);
+        //         });
+        //         $("#project-page-holder").slideUp(600, function () {
+        //             $("#project-page-data").css("visibility", "visible");
+        //         }).delay(500).slideDown(1e3, function () {
+        //             $("#project-page-data").fadeIn("slow", function () {
+        //                 initajaxjs();
+        //             });
+        //         });
+        //     }
+        //     return false;
+        // });
         $("#project_close").on("click", function (a) {
             a.preventDefault();
             $("#project-page-data").animate({
@@ -783,3 +783,12 @@ var temp = '<div class="post"><div class="post-media"><a href="blog-single.html"
     
     return $(temp);
     }
+
+document.getElementById('links').onclick = function (event) {
+    event = event || window.event;
+    var target = event.target || event.srcElement,
+        link = target.src ? target.parentNode : target,
+        options = {index: link, event: event},
+        links = this.getElementsByTagName('a');
+    blueimp.Gallery(links, options);
+};
