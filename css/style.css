@@ -309,7 +309,8 @@ section h4{
     font-weight:400;
 } 
 .gray-bg {
-    background:#eee;
+    background:#fbfbfb;
+    /*background:#eee;*/
 }
 /*------ nivigation - ------------------------------------------------*/
 .nav-holder {
