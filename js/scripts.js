@@ -772,7 +772,7 @@ var temp = '<div class="post"><div class="post-media"><a href="blog-single.html"
         '<img src="' + image + '" class="respimg transition" alt="' + title + '">' +
         '</a></div><div class="post-title">' +
         '<div class="post-meta"><ul><li>' + date + '</li></ul>' +
-        '</div><div class=" clearfix"></div><h3><a href="#" class="fadelink">' + title + '</a></h3>' +
+        '</div><div class=" clearfix"></div><h3><b><a href="#" class="fadelink">' + title + '</a></b></h3>' +
         '</div><div class="post-body"><p>' + content + '</p><div>';
     if (registrationLabel != "" || registrationLabel != null || registrationLink != "" || registrationLink != null) {
         '<a href="' + registrationLink + '" class="button  float-button content-button  transition hide-icon"><i class="fa fa-angle-right transition2"></i><span class="text transition color-bg">' + registrationLabel + '</span></a>';
