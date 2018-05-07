@@ -1,0 +1,3 @@
+[submodule "Plugin/Froala"]
+	path = Plugin/Froala
+	url = git://github.com/froala/wysiwyg-cake.git

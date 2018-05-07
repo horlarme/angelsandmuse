@@ -736,8 +736,8 @@ $('input[name=coupon]').change(function(e){
 
 function getEvents(){
 
-//$.getJSON('http://localhost:8765/events/events.json')
-$.getJSON('http://admin.angelsandmuse.com/events/events.json')
+$.getJSON('http://localhost:8765/events/events.json')
+//$.getJSON('http://admin.angelsandmuse.com/events/events.json')
         .done(function(e){
             
             for(var i = 9; i >= 0; i--){
