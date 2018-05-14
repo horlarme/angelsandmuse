@@ -740,7 +740,6 @@ $.getJSON('http://admin.angelsandmuse.com/events/events.json')
         .done(function(e){
             
             for(var i = 9; i >= 0; i--){
-                console.log(i);
                 if(!e.events[i]){
                     continue;
                 }
@@ -748,7 +747,7 @@ $.getJSON('http://admin.angelsandmuse.com/events/events.json')
                 event = e.events[i];
                   
                 var title = (event.event),
-                        image = (event.featured_img),
+                        image = "http://localhost:8765/uploads/" + (event.featured_img),
                         galleryLabel = (event.gallery_label),
                         galleryLink = (event.gallery_link),
                         registrationLink = (event.registration_link),
