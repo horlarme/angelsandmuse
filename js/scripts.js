@@ -736,8 +736,8 @@ $('input[name=coupon]').change(function(e){
 
 function getEvents(){
 
-$.getJSON('http://localhost:8765/events/events.json')
-//$.getJSON('http://admin.angelsandmuse.com/events/events.json')
+//$.getJSON('http://localhost:8765/events/events.json')
+$.getJSON('http://admin.angelsandmuse.com/events/events.json')
         .done(function(e){
             
             for(var i = 9; i >= 0; i--){
@@ -768,8 +768,10 @@ $.getJSON('http://localhost:8765/events/events.json')
 }
 
 function eventTemplate(title, image, content, date, registrationLink, registrationLabel = "Register", galleryLink = false, galleryLabel = false){
+//var image_url = "http://localhost:8765/files/Events/featured_img/";
+var image_url = "http://admin.angelsandmuse.com/files/Events/featured_img/";
 var temp = '<div class="post"><div class="post-media"><a href="blog-single.html" class="fadelink">' +
-        '<img src="' + image + '" class="respimg transition" alt="' + title + '">' +
+        '<img src="' + image_url + image + '" class="respimg transition" alt="' + title + '">' +
         '</a></div><div class="post-title">' +
         '<div class="post-meta"><ul><li>' + date + '</li></ul>' +
         '</div><div class=" clearfix"></div><h3><b><a href="#" class="fadelink">' + title + '</a></b></h3>' +
