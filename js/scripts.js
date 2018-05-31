@@ -616,7 +616,7 @@ function showSpaces(e) {
     changeForm(selected);
 }
 
-var forms = document.querySelectorAll('select[name=price]');
+var form = $('select[name=price]');
 
 function changeForm(index) {
     form.empty();
