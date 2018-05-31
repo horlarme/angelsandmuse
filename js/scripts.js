@@ -619,24 +619,19 @@ function showSpaces(e) {
 var forms = document.querySelectorAll('select[name=price]');
 
 function changeForm(index) {
-    for (var i = 0; i <= (forms.length - 1); i++) {
-        forms[i].style.display = 'none';
-        $(forms[i]).attr('disabled', 'true');
-        if (i == index) {
-            forms[index].style.display = 'block';
-            $(forms[index]).removeAttr('disabled');
-        }
-    }
-    
-    updatePrice(index);
+    form.empty();
+    for(var i = 0; i <= prod[index].length-1; i++){
+        form.append("<option value='" + index + "," + i + "' onclick='setProd("+ index + "," + i + ")'>" + prod[index][i].name + " (&#x20A6;" + prod[index][i].price + ")</option>");
+    }        
+    updatePrice(index, 0);
 }
 
-function updatePrice(priceIndex){
+function updatePrice(typeIndex, priceIndex){
     priceElement = $('#price'),
     couponElement = $('#discount'),
     unitElement = $('#unit'),
     totalPriceElement = $('#totalPrice'),
-    price = prod[priceIndex].price,
+    price = prod[typeIndex][priceIndex].price,
     spaces = $('input[name=period]').val();
     
     priceElement.text(accounting.formatMoney(price, "₦", 2, ",", "."));
@@ -652,22 +647,16 @@ function updatePrice(priceIndex){
 
 var couponDiscount = 00;
 
-var s;
 
-function setProd(e) {
-    s = (e.value);
-    updatePrice(s);
+function setProd(e,t) {
+    updatePrice(e,t);
 }
 
 var prod = [];
-prod['0'] = {price: 00, name: '----'};
-prod['1'] = {price: 35000, name: 'Per Night - White Room'};
-prod['2'] = {price: 40000, name: 'Per Night - VE Signature Room'};
-prod['3'] = {price: 5000, name: 'Per Hour'};
-prod['4'] = {name: 'Per month per desk', price: 68500};
-prod['5'] = {name: 'Per annum per desk', price: 800000};
-prod['6'] = {name: 'Per hour', price: 20000};
-prod['7'] = {name: 'Per event', price: 105000};
+prod['0'] = [{price: 00, name: '----'}];
+prod['1']   = [{price: 35000, name: 'Per Night - White Room'},{price: 40000, name: 'Per Night - VE Signature Room'}];
+prod['2']  = [{price: 5000, name: 'Per Hour'},{name: 'Per month per desk', price: 68500},{name: 'Per annum per desk', price: 800000}];
+prod['3'] = [{name: 'Per hour', price: 20000},{name: 'Per event', price: 105000}];
 
 $('.go-book').magnificPopup({
     type: 'inline',

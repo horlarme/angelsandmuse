@@ -20,8 +20,8 @@ $email = $_POST['email'];
 $comments = $_POST['comments'];
 $mobile = $_POST['mobile'];
 $type = $_POST['type'];
-$price = $prod[$_POST['price']];
-$seats = $_POST['period'];
+$price = explode(",", $_POST['price']);
+$price = $prod[$price[0]][$price[1]];$seats = $_POST['period'];
 $datefrom = $_POST['datefrom'] . " " . $_POST['timefrom'];
 $code = $_REQUEST['coupon'];
 
