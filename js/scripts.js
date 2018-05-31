@@ -621,7 +621,7 @@ var form = $('select[name=price]');
 function changeForm(index) {
     form.empty();
     for(var i = 0; i <= prod[index].length-1; i++){
-        form.append("<option value='" + index + "," + i + "' onclick='setProd("+ index + "," + i + ")'>" + prod[index][i].name + " (&#x20A6;" + prod[index][i].price + ")</option>");
+        form.append("<option value='" + index + "," + i + "'>" + prod[index][i].name + " (&#x20A6;" + prod[index][i].price + ")</option>");
     }        
     updatePrice(index, 0);
 }
@@ -648,8 +648,8 @@ function updatePrice(typeIndex, priceIndex){
 var couponDiscount = 00;
 
 
-function setProd(e,t) {
-    updatePrice(e,t);
+function setProd(e) {
+    updatePrice(e[0], e[2]);
 }
 
 var prod = [];
