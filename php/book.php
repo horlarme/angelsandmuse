@@ -77,8 +77,6 @@ curl_setopt_array($coupon, array(
 $response = json_decode(curl_exec($coupon));
 
 
-var_dump(curl_exec($coupon));
-
 if($response->coupon > 0){
     $today = date('Y-m-d') . 'T00:00:00+00:00';
     $discount = $response->coupon[0]->discount;
@@ -102,7 +100,6 @@ if($response->coupon > 0){
             CURLOPT_CUSTOMREQUEST => "POST"
         ));
         
-        var_dump(curl_exec($markUsed));
     }
 }else{
     $discount = 0;
