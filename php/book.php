@@ -104,7 +104,7 @@ if($response->coupon > 0){
 }else{
     $discount = 0;
 }
-exit;
+//exit;
 /**
  * Dealing with the total price
  */
